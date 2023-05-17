@@ -12,13 +12,13 @@ $(function () {
   $('input[type=checkbox]').on('change', addToSelectedAmenities);
 
   // Request the API status
-  $.get('http://0.0.0.0:5001/api/v1/status/', function (data, status) {
+  $.get('/api/v1/status', function (data, status) {
     if (data.status === 'OK') {
       // Add the 'available' class to the API status div
-      $('div#api_status').addClass('avalaible');
+      $('div#api_status').addClass('available');
     } else {
       // Remove the 'available' class to the API status div
-      $('div#api_status').removeClass('avalaible');
+      $('div#api_status').removeClass('available');
     }
   });
 });
